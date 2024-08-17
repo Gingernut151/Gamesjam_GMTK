@@ -36,12 +36,17 @@ func _on_back_pressed():
 
 
 func _on_mini_van_pressed():
-	_load_scene(preload("res://vehicles/car_base.tscn"))
-
+	#_load_scene(preload("res://vehicles/car_base.tscn"))
+	_on_andy_truck_pressed()
 
 func _on_trailer_truck_pressed():
-	_load_scene(preload("res://vehicles/trailer_truck.tscn"))
+	#_load_scene(preload("res://vehicles/trailer_truck.tscn"))
+	_on_andy_truck_pressed()
 
 
 func _on_tow_truck_pressed():
-	_load_scene(preload("res://vehicles/tow_truck.tscn"))
+	#_load_scene(preload("res://vehicles/tow_truck.tscn"))
+	_on_andy_truck_pressed()
+	
+func _on_andy_truck_pressed():
+	_load_scene(preload("res://vehicles/AndyTruck.tscn"))
