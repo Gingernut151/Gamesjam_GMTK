@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dfdgytsvtqxwv"
-path="res://.godot/imported/truck_town.glb-38d559f9833ad49c787ab883e4ee6433.scn"
+path="res://.godot/imported/truck_town.glb-edf1869f0df524ce3ea3af639e91c346.scn"
 
 [deps]
 
-source_file="res://Maps/Town/truck_town.glb"
-dest_files=["res://.godot/imported/truck_town.glb-38d559f9833ad49c787ab883e4ee6433.scn"]
+source_file="res://maps/town/truck_town.glb"
+dest_files=["res://.godot/imported/truck_town.glb-edf1869f0df524ce3ea3af639e91c346.scn"]
 
 [params]
 
