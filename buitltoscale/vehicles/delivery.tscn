@@ -1,6 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://brm44tilevdt0"]
+[gd_scene load_steps=7 format=3 uid="uid://brm44tilevdt0"]
 
 [ext_resource type="PackedScene" uid="uid://6j8e2hud6tga" path="res://playertruck/delivery.glb" id="1_fbu3u"]
+[ext_resource type="Script" path="res://vehicles/delivery.gd" id="2_vykgd"]
+
+[sub_resource type="Animation" id="Animation_w7bqn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.52156, -1.49224)]
+}
 
 [sub_resource type="Animation" id="Animation_i6pxl"]
 resource_name = "door_open"
@@ -19,28 +35,16 @@ tracks/0/keys = {
 "values": [Vector3(0, 1.52156, -1.49224), Vector3(0, 2.53379, -1.49224)]
 }
 
-[sub_resource type="Animation" id="Animation_w7bqn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("door:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.52156, -1.49224)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rqmhm"]
 _data = {
 "RESET": SubResource("Animation_w7bqn"),
 "door_open": SubResource("Animation_i6pxl")
 }
 
+[sub_resource type="BoxMesh" id="BoxMesh_gkov0"]
+
 [node name="delivery" instance=ExtResource("1_fbu3u")]
+script = ExtResource("2_vykgd")
 
 [node name="truck_light" type="OmniLight3D" parent="body" index="0"]
 transform = Transform3D(-0.376919, 0.926246, 0, -0.926246, -0.376919, 0, 0, 0, 1, 0, 1.12964, -0.591985)
@@ -59,3 +63,8 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 1.10664, -4.04229)
 libraries = {
 "": SubResource("AnimationLibrary_rqmhm")
 }
+autoplay = "door_open"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="8"]
+transform = Transform3D(0.149764, 0, 0, 0, 0.149764, 0, 0, 0, 0.149764, 0, 2.22958, -0.957365)
+mesh = SubResource("BoxMesh_gkov0")
