@@ -1,9 +1,9 @@
 [gd_scene load_steps=38 format=3 uid="uid://d0ygmqpylq0wy"]
 
-[ext_resource type="PackedScene" uid="uid://dfdgytsvtqxwv" path="res://town/truck_town.glb" id="1_x0dmm"]
-[ext_resource type="Script" path="res://spedometer.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://b2g4dq0w72e68" path="res://town/materials/grass.webp" id="4_cymw0"]
-[ext_resource type="Material" uid="uid://bdjiubscxkdn6" path="res://town/materials/cement.tres" id="5_83ty7"]
+[ext_resource type="PackedScene" uid="uid://dfdgytsvtqxwv" path="res://maps/town/truck_town.glb" id="1_x0dmm"]
+[ext_resource type="Script" path="res://ui/spedometer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b2g4dq0w72e68" path="res://maps/town/materials/grass.webp" id="4_cymw0"]
+[ext_resource type="Material" uid="uid://bdjiubscxkdn6" path="res://maps/town/materials/cement.tres" id="5_83ty7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2k12y"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

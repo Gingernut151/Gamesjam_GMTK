@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://sun2n8a4xapl"
-path="res://.godot/imported/impact_3.wav-42b62d7e38b905503470ffc8bf41b3bd.sample"
+path="res://.godot/imported/impact_3.wav-5182084c35e784fc6367c90a9cffca41.sample"
 
 [deps]
 
-source_file="res://vehicles/impact_3.wav"
-dest_files=["res://.godot/imported/impact_3.wav-42b62d7e38b905503470ffc8bf41b3bd.sample"]
+source_file="res://vehicles/audio/impact_3.wav"
+dest_files=["res://.godot/imported/impact_3.wav-5182084c35e784fc6367c90a9cffca41.sample"]
 
 [params]
 

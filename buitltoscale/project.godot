@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BuitlToScale"
-run/main_scene="res://UI/car_select/car_select.tscn"
+run/main_scene="res://ui/car_select/car_select.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 

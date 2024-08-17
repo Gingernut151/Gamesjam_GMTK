@@ -14,7 +14,7 @@ func _process(_delta: float):
 func _load_scene(car_scene: PackedScene):
 	var car: Node3D = car_scene.instantiate()
 	car.name = "car"
-	town = preload("res://town/town_scene.tscn").instantiate()
+	town = preload("res://maps/town/town_scene.tscn").instantiate()
 	town.get_node(^"InstancePos").add_child(car)
 	town.get_node(^"Spedometer").car_body = car.get_child(0)
 	town.get_node(^"Back").pressed.connect(_on_back_pressed)

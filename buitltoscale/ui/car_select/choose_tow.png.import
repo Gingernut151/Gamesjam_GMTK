@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de7itkxhl0u28"
-path="res://.godot/imported/choose_tow.png-e1d5f4ba7eb707eed82d65f6944c644a.ctex"
+path="res://.godot/imported/choose_tow.png-ef1d1b10bea6b6fce16c14200b73b746.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://car_select/choose_tow.png"
-dest_files=["res://.godot/imported/choose_tow.png-e1d5f4ba7eb707eed82d65f6944c644a.ctex"]
+source_file="res://ui/car_select/choose_tow.png"
+dest_files=["res://.godot/imported/choose_tow.png-ef1d1b10bea6b6fce16c14200b73b746.ctex"]
 
 [params]
 

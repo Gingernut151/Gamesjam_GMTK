@@ -12,8 +12,6 @@ var _steer_target := 0.0
 @onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
 func _physics_process(delta: float):
-	var fwd_mps := (linear_velocity * transform.basis).x
-
 	_steer_target = Input.get_axis(&"turn_right", &"turn_left")
 	_steer_target *= STEER_LIMIT
 
