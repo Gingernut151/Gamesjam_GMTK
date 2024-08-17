@@ -15,6 +15,16 @@ run/main_scene="res://ui/car_select/car_select.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/mode=3
+window/size/resizable=false
+window/size/borderless=true
+
+[editor]
+
+import/use_multiple_threads=false
+
 [input]
 
 ui_accept={
@@ -146,3 +156,7 @@ common/physics_ticks_per_second=120
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[threading]
+
+worker_pool/max_threads=1
