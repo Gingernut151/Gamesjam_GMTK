@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3i6dph8bouht"]
+
+[ext_resource type="Texture2D" uid="uid://cygnmi1fa00mn" path="res://props/chest/Textur/Stone Chest_Albedo.png" id="1_vfcvk"]
+
+[resource]
+resource_name = "Stone chest"
+cull_mode = 2
+albedo_texture = ExtResource("1_vfcvk")
+roughness = 0.895455

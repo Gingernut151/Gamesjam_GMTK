@@ -1,0 +1,16 @@
+newmtl Box material 5_8d9969dc-1276-4867-b6d5-8c75b7a9f7ec
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Metal010_1K_Color.jpg
+newmtl Cylinder material_135b642d-eb13-4100-a653-a88b33c21722
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd 10857-0-1457795883.jpg
+newmtl Cylinder material 2_eb9c7e10-4e05-4a5d-9a93-802799e562d4
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd 10857-0-1457795883.jpg
+newmtl Box material 3_fd3f167a-4905-4b75-8f12-8c7a19d9743c
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Metal010_1K_Color_1.jpg
