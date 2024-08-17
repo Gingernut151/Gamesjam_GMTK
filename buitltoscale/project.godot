@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="BuitlToScale"
+run/main_scene="res://Maps/DefaultMap.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
