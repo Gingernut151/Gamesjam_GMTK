@@ -35,11 +35,11 @@ _subresources={
 "materials": {
 "grass": {
 "use_external/enabled": true,
-"use_external/path": "res://town/materials/grass.tres"
+"use_external/path": "res://maps/town/materials/grass.tres"
 },
 "road": {
 "use_external/enabled": true,
-"use_external/path": "res://town/materials/cement.tres"
+"use_external/path": "res://maps/town/materials/cement.tres"
 }
 },
 "nodes": {
