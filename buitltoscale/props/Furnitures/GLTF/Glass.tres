@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cp4bm15t116kn"]
+
+[ext_resource type="Shader" path="res://props/Furnitures/MaterialsAndShaders/Glass.tres" id="1_jyv2e"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("1_jyv2e")
+
+[resource]
+resource_name = "Glass"
+next_pass = SubResource("1")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
