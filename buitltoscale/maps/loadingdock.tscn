@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc6u4in30euqd"]
+
+[ext_resource type="PackedScene" uid="uid://ctnxf5it8kw6m" path="res://maps/car_loadingdock.tscn" id="1_4liff"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pce1"]
+albedo_color = Color(0.293874, 0.275599, 0.586138, 1)
+
+[node name="Loadingdock" type="Node"]
+
+[node name="Truck" parent="." instance=ExtResource("1_4liff")]
+transform = Transform3D(0.995853, 0.0909802, 0, -0.0908281, 0.994187, -0.057808, -0.00525938, 0.0575682, 0.998328, -1.36057, 1.06488, -0.117125)
+angular_velocity = Vector3(0, 0, 0)
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(5.90559, 0, 0, 0, 1, 0, 0, 0, 7.10182, 0, 0, 0)
+use_collision = true
+size = Vector3(5, 0.1, 5)
+material = SubResource("StandardMaterial3D_1pce1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.983866, 5.94844e-08, -0.178905, -0.0611716, 0.939728, 0.336405, 0.168122, 0.341922, -0.924567, -1.93418, 4.08055, -6.81903)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.958355, 0.0890068, -0.271355, 0.0324426, 0.977971, 0.206204, 0.283731, 0.188813, -0.940131, -1.822, 1.2, -2.487)
+current = true
+fov = 52.0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c38c1hhxa5jya"]
+
+[ext_resource type="PackedScene" uid="uid://6j8e2hud6tga" path="res://playertruck/delivery.glb" id="1_u1guc"]
+
+[node name="delivery" instance=ExtResource("1_u1guc")]
+
+[node name="door" parent="." index="1"]
+visible = false

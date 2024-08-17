@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bkl4mml8ppwht"]
+
+[ext_resource type="Shader" path="res://shader/pp_shader.gdshader" id="1_3t7lr"]
+
+[resource]
+shader = ExtResource("1_3t7lr")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 3

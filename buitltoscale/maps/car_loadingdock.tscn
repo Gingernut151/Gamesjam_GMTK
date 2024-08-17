@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctnxf5it8kw6m"]
+
+[ext_resource type="PackedScene" uid="uid://c38c1hhxa5jya" path="res://maps/in_truck.tscn" id="1_3ufma"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u5axj"]
+friction = 0.1
+bounce = 0.59
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8yp6"]
+size = Vector3(1.32477, 1.61508, 3.27484)
+
+[node name="Truck" type="RigidBody3D"]
+transform = Transform3D(0.999998, -0.00166781, -0.000666082, 0.00166776, 0.999999, -8.06948e-05, 0.000666215, 7.95883e-05, 1, 0, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_u5axj")
+can_sleep = false
+continuous_cd = true
+angular_velocity = Vector3(0.872665, 0.872665, 0)
+
+[node name="In_Truck" parent="." instance=ExtResource("1_3ufma")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818938, 0)
+shape = SubResource("BoxShape3D_c8yp6")
