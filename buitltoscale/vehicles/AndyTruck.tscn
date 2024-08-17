@@ -1,12 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://ch1xkan0nkvak"]
+[gd_scene load_steps=23 format=3 uid="uid://ch1xkan0nkvak"]
 
 [ext_resource type="Script" path="res://vehicles/vehicle.gd" id="1_xqlap"]
-[ext_resource type="ArrayMesh" uid="uid://bqrwin8ccgptt" path="res://vehicles/meshes/wheel.res" id="2_bm8at"]
+[ext_resource type="ArrayMesh" uid="uid://cgu6a826w1m2e" path="res://playertruck/delivery_wheel-front-left.res" id="2_1m0mm"]
+[ext_resource type="ArrayMesh" uid="uid://c8a6bd0c5dlkg" path="res://playertruck/delivery_wheel-back-left.res" id="3_sf1wy"]
 [ext_resource type="ArrayMesh" uid="uid://c570dl7u6w434" path="res://playertruck/delivery_body.res" id="3_sjruh"]
+[ext_resource type="ArrayMesh" uid="uid://c0mysabn1cjj6" path="res://playertruck/delivery_wheel-front-right.res" id="4_qudtt"]
 [ext_resource type="Script" path="res://vehicles/follow_camera.gd" id="4_towfd"]
 [ext_resource type="AudioStream" uid="uid://cb7wvsd6vygd3" path="res://vehicles/audio/engine.wav" id="5_cj6ih"]
+[ext_resource type="ArrayMesh" uid="uid://stvkmkuvmch" path="res://playertruck/delivery_wheel-back-right.res" id="5_geatr"]
 [ext_resource type="AudioStream" uid="uid://sy2li7u35867" path="res://vehicles/audio/impact_1.wav" id="6_45sym"]
 [ext_resource type="AudioStream" uid="uid://bf0h7s81yr8nj" path="res://vehicles/audio/impact_2.wav" id="7_msk1s"]
+[ext_resource type="ArrayMesh" uid="uid://cu5ya8w0wpfd3" path="res://playertruck/delivery_door.res" id="7_qu4l1"]
 [ext_resource type="AudioStream" uid="uid://sun2n8a4xapl" path="res://vehicles/audio/impact_3.wav" id="8_wmbh2"]
 [ext_resource type="AudioStream" uid="uid://dpbayeeufya21" path="res://vehicles/audio/impact_4.wav" id="9_2kfhh"]
 [ext_resource type="Texture2D" uid="uid://d4ostmqwgytk" path="res://vehicles/materials/particle_smoke.png" id="10_aupcu"]
@@ -60,7 +64,7 @@ center_of_mass_mode = 1
 script = ExtResource("1_xqlap")
 
 [node name="Wheel1" type="VehicleWheel3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.115169, 1.02139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.345135, 0.115169, 1.02139)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.4
@@ -73,10 +77,10 @@ damping_compression = 0.88
 [node name="Wheel1" type="MeshInstance3D" parent="Body/Wheel1"]
 layers = 2
 gi_mode = 2
-mesh = ExtResource("2_bm8at")
+mesh = ExtResource("2_1m0mm")
 
 [node name="Wheel2" type="VehicleWheel3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.115169, -0.590804)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.333042, 0.115169, -0.590804)
 use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.25
@@ -88,10 +92,10 @@ damping_compression = 0.88
 [node name="Wheel2" type="MeshInstance3D" parent="Body/Wheel2"]
 layers = 2
 gi_mode = 2
-mesh = ExtResource("2_bm8at")
+mesh = ExtResource("3_sf1wy")
 
 [node name="Wheel3" type="VehicleWheel3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573678, 0.115169, 1.10416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.311361, 0.115169, 1.04279)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.4
@@ -102,13 +106,12 @@ suspension_stiffness = 40.0
 damping_compression = 0.88
 
 [node name="Wheel3" type="MeshInstance3D" parent="Body/Wheel3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0784366)
 layers = 2
 gi_mode = 2
-mesh = ExtResource("2_bm8at")
+mesh = ExtResource("4_qudtt")
 
 [node name="Wheel4" type="VehicleWheel3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573678, 0.115169, -0.783403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.320725, 0.115169, -0.58029)
 use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.25
@@ -118,15 +121,19 @@ suspension_stiffness = 40.0
 damping_compression = 0.88
 
 [node name="Wheel4" type="MeshInstance3D" parent="Body/Wheel4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.193677)
 layers = 2
 gi_mode = 2
-mesh = ExtResource("2_bm8at")
+mesh = ExtResource("5_geatr")
 
 [node name="Body" type="MeshInstance3D" parent="Body"]
 layers = 2
 gi_mode = 2
 mesh = ExtResource("3_sjruh")
+
+[node name="door" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45018, -1.49224)
+mesh = ExtResource("7_qu4l1")
+skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.588269, 0.0774262)
