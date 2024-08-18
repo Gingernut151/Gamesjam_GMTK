@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cte2xxj70bo6g"]
+[gd_scene load_steps=6 format=3 uid="uid://cte2xxj70bo6g"]
 
 [ext_resource type="Script" path="res://maps/character_movement.gd" id="1_pmnap"]
+[ext_resource type="Script" path="res://maps/raycast.gd" id="2_ixyeq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_iphe4"]
 height = 3.0
@@ -15,6 +16,8 @@ radius = 0.552478
 [node name="World" type="Node3D"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_pmnap")
 
 [node name="Head" type="Node3D" parent="Player"]
@@ -23,9 +26,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1305, 0)
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 current = true
 
-[node name="RayCast3D" type="RayCast3D" parent="Player/Head/Camera3D"]
+[node name="Interaction" type="RayCast3D" parent="Player/Head/Camera3D"]
+target_position = Vector3(0, 0, -5)
+collision_mask = 7
+collide_with_areas = true
+debug_shape_thickness = 5
+script = ExtResource("2_ixyeq")
 
-[node name="Marker3D" type="Marker3D" parent="Player/Head/Camera3D"]
+[node name="Hand" type="Marker3D" parent="Player/Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.83458)
+gizmo_extents = 0.24
+
+[node name="JoltGeneric6DOFJoint3D" type="JoltGeneric6DOFJoint3D" parent="Player/Head/Camera3D"]
+linear_limit_x/enabled = false
+linear_limit_y/enabled = false
+linear_limit_z/enabled = false
+node_a = NodePath("../StaticBody3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Player/Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.83458)
 
 [node name="Body" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("CapsuleMesh_iphe4")

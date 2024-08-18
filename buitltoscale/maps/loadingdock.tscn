@@ -1,12 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc6u4in30euqd"]
+[gd_scene load_steps=9 format=3 uid="uid://dc6u4in30euqd"]
 
 [ext_resource type="PackedScene" uid="uid://ctnxf5it8kw6m" path="res://maps/car_loadingdock.tscn" id="1_4liff"]
 [ext_resource type="PackedScene" uid="uid://cte2xxj70bo6g" path="res://maps/player.tscn" id="2_rqxxe"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e568c"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_buenm"]
+sky_material = SubResource("ProceduralSkyMaterial_e568c")
+
+[sub_resource type="Environment" id="Environment_se44t"]
+background_mode = 2
+sky = SubResource("Sky_buenm")
+tonemap_mode = 2
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pce1"]
 albedo_color = Color(0.293874, 0.275599, 0.586138, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_fisav"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xj3ey"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
 [node name="Loadingdock" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.987416, 0.620059, 0.190804, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_se44t")
 
 [node name="Truck" parent="." instance=ExtResource("1_4liff")]
 transform = Transform3D(0.995853, 0.0909802, 0, -0.0908281, 0.994187, -0.057808, -0.00525938, 0.0575682, 0.998328, -1.36057, 1.06488, -0.117125)
@@ -18,8 +43,35 @@ use_collision = true
 size = Vector3(5, 0.1, 5)
 material = SubResource("StandardMaterial3D_1pce1")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.983866, 5.94844e-08, -0.178905, -0.0611716, 0.939728, 0.336405, 0.168122, 0.341922, -0.924567, -1.93418, 4.08055, -6.81903)
-
 [node name="Player" parent="." instance=ExtResource("2_rqxxe")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.576319, -7.76347)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.56705, 0.576319, -9.03153)
+
+[node name="Box1" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.863403, -4.32196)
+collision_layer = 4
+collision_mask = 7
+can_sleep = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box1"]
+transform = Transform3D(0.525723, 0, 0, 0, 0.525723, 0, 0, 0, 0.525723, 0, 0, 0)
+mesh = SubResource("BoxMesh_fisav")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box1"]
+transform = Transform3D(0.525723, 0, 0, 0, 0.525723, 0, 0, 0, 0.525723, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_xj3ey")
+
+[node name="Box2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25253, 1.72681, -4.48123)
+collision_layer = 4
+collision_mask = 7
+can_sleep = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box2"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = SubResource("BoxMesh_fisav")
+skeleton = NodePath("../../Box1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box2"]
+transform = Transform3D(0.263, 0, 0, 0, 0.263, 0, 0, 0, 0.263, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_xj3ey")
