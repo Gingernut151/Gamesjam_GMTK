@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc6u4in30euqd"]
+[gd_scene load_steps=3 format=3 uid="uid://b6bw576rahqxe"]
 
-[ext_resource type="PackedScene" uid="uid://ctnxf5it8kw6m" path="res://maps/car_loadingdock.tscn" id="1_4liff"]
+[ext_resource type="PackedScene" path="res://maps/car_loadingdock.tscn" id="1_4liff"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pce1"]
 albedo_color = Color(0.293874, 0.275599, 0.586138, 1)
