@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ch1xkan0nkvak"]
+[gd_scene load_steps=22 format=3 uid="uid://ch1xkan0nkvak"]
 
 [ext_resource type="Script" path="res://vehicles/vehicle.gd" id="1_xqlap"]
 [ext_resource type="ArrayMesh" uid="uid://cgu6a826w1m2e" path="res://playertruck/delivery_wheel-front-left.res" id="2_1m0mm"]
@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://sun2n8a4xapl" path="res://vehicles/audio/impact_3.wav" id="8_wmbh2"]
 [ext_resource type="AudioStream" uid="uid://dpbayeeufya21" path="res://vehicles/audio/impact_4.wav" id="9_2kfhh"]
 [ext_resource type="Texture2D" uid="uid://d4ostmqwgytk" path="res://vehicles/materials/particle_smoke.png" id="10_aupcu"]
-[ext_resource type="Texture2D" uid="uid://bju75l2w3r7vq" path="res://vehicles/materials/blob_shadow.png" id="11_lxaph"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
 friction = 0.5
@@ -61,6 +60,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)
 physics_material_override = SubResource("PhysicsMaterial_l7i2k")
 center_of_mass_mode = 1
+inertia = Vector3(10, 0, 10)
 script = ExtResource("1_xqlap")
 
 [node name="Wheel1" type="VehicleWheel3D" parent="Body"]
@@ -177,14 +177,6 @@ damping_max = 0.05
 angle_max = 360.0
 scale_amount_curve = SubResource("Curve_4j5vd")
 color_ramp = SubResource("Gradient_p5xtl")
-
-[node name="BlobShadow" type="Decal" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
-size = Vector3(1.6, 4, 3)
-texture_albedo = ExtResource("11_lxaph")
-upper_fade = 2.0
-lower_fade = 1.0
-cull_mask = 1048573
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Body"]
 current = true

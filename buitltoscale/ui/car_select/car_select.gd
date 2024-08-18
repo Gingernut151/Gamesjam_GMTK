@@ -4,7 +4,7 @@ var town: Node3D = null
 
 func _ready():
 	# Automatically focus the first item for gamepad accessibility.
-	$HBoxContainer/MiniVan.grab_focus.call_deferred()
+	$HBoxContainer/TrailerTruck.grab_focus.call_deferred()
 
 func _process(_delta: float):
 	if Input.is_action_just_pressed(&"back"):
@@ -29,7 +29,7 @@ func _on_back_pressed():
 		town.queue_free()
 		show()
 		# Automatically focus the first item for gamepad accessibility.
-		$HBoxContainer/MiniVan.grab_focus.call_deferred()
+		$HBoxContainer/TrailerTruck.grab_focus.call_deferred()
 	else:
 		# In main menu, exit the game.
 		get_tree().quit()

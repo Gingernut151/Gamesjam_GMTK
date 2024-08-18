@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckvqraq6j1okh"]
+[gd_scene load_steps=4 format=3 uid="uid://ckvqraq6j1okh"]
 
 [ext_resource type="Script" path="res://ui/car_select/car_select.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://bh7b4n4lg1uqt" path="res://ui/car_select/choose_van.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://hvkcmpdq1t0k" path="res://ui/car_select/choose_trailer.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://de7itkxhl0u28" path="res://ui/car_select/choose_tow.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cdh41bfn8pqmb" path="res://ui/car_select/delivery_truck.png" id="2_a7kv7"]
 
 [sub_resource type="FontVariation" id="FontVariation_hqcvw"]
 variation_embolden = 1.0
@@ -29,46 +27,35 @@ size_flags_vertical = 2
 script = ExtResource("1")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
+offset_top = -48.0
+offset_bottom = 205.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="MiniVan" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-icon = ExtResource("2")
 
 [node name="TrailerTruck" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-icon = ExtResource("3")
+icon = ExtResource("2_a7kv7")
+icon_alignment = 1
 
-[node name="TowTruck" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-icon = ExtResource("4")
-
-[node name="TowTruck" type="Button" parent="HBoxContainer/TowTruck"]
-layout_mode = 0
-size_flags_horizontal = 6
-size_flags_vertical = 4
-icon = ExtResource("4")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.196
 anchor_right = 0.5
-offset_left = -180.0
-offset_top = 32.0
-offset_right = 180.0
-offset_bottom = 123.0
+anchor_bottom = 0.196
+offset_left = -492.0
+offset_top = -86.6
+offset_right = 501.0
+offset_bottom = 118.4
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.494118, 0.858824, 0.960784, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.25098, 1, 0.12549)
@@ -78,10 +65,33 @@ theme_override_constants/shadow_offset_y = 6
 theme_override_constants/outline_size = 38
 theme_override_constants/shadow_outline_size = 38
 theme_override_fonts/font = SubResource("FontVariation_hqcvw")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 120
 text = "Built To Scale"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="HBoxContainer/MiniVan" to="." method="_on_mini_van_pressed"]
+[node name="Click To Start" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -496.0
+offset_top = -75.0
+offset_right = 497.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.494118, 0.858824, 0.960784, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.25098, 1, 0.12549)
+theme_override_colors/font_outline_color = Color(0.105882, 0.278431, 0.47451, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 38
+theme_override_constants/shadow_outline_size = 38
+theme_override_fonts/font = SubResource("FontVariation_hqcvw")
+theme_override_font_sizes/font_size = 40
+text = "^ Click to Start ^"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="HBoxContainer/TrailerTruck" to="." method="_on_trailer_truck_pressed"]
-[connection signal="pressed" from="HBoxContainer/TowTruck" to="." method="_on_tow_truck_pressed"]
-[connection signal="pressed" from="HBoxContainer/TowTruck/TowTruck" to="." method="_on_tow_truck_pressed"]
